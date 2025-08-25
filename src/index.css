@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Shadcn UI Colors */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 142.1 76.2% 36.3%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 142.1 76.2% 36.3%;
+  --radius: 0.5rem;
+}
+
+/* Custom Tailwind Components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-sage text-softWhite hover:bg-sage/90 focus:ring-sage shadow-sm hover:shadow-md;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border border-lightGray text-charcoal hover:bg-warmBeige focus:ring-sage;
+  }
+  
+  .btn-secondary {
+    @apply bg-mutedBlue text-softWhite hover:bg-mutedBlue/90 focus:ring-mutedBlue;
+  }
+  
+  .card {
+    @apply bg-softWhite border border-lightGray rounded-lg shadow-sm;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-lightGray rounded-lg focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent transition-all duration-200;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+}
+
+/* Mobile-First Responsive Design */
+@layer utilities {
+  /* Touch-friendly button sizes for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Mobile-safe spacing */
+  .mobile-safe {
+    @apply p-4 sm:p-6;
+  }
+  
+  /* Mobile grid adjustments */
+  .mobile-grid {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  /* Mobile text sizing - Fixed for better mobile readability */
+  .mobile-text {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+  
+  .mobile-text-sm {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .mobile-text-lg {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .mobile-text-xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  /* Mobile heading sizes */
+  .mobile-h1 {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .mobile-h2 {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .mobile-h3 {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+  
+  .mobile-h4 {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  /* Mobile body text */
+  .mobile-body {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .mobile-body-sm {
+    @apply text-xs sm:text-sm lg:text-base;
+  }
+  
+  /* Mobile caption text */
+  .mobile-caption {
+    @apply text-xs sm:text-sm;
+  }
+  
+  /* Mobile padding and margins */
+  .mobile-p {
+    @apply p-3 sm:p-4 lg:p-6;
+  }
+  
+  .mobile-px {
+    @apply px-3 sm:px-4 lg:px-6;
+  }
+  
+  .mobile-py {
+    @apply py-3 sm:py-4 lg:py-6;
+  }
+  
+  .mobile-m {
+    @apply m-3 sm:m-4 lg:m-6;
+  }
+  
+  .mobile-mx {
+    @apply mx-3 sm:mx-4 lg:mx-6;
+  }
+  
+  .mobile-my {
+    @apply my-3 sm:my-4 lg:my-6;
+  }
+  
+  /* Mobile spacing */
+  .mobile-space-y {
+    @apply space-y-3 sm:space-y-4 lg:space-y-6;
+  }
+  
+  .mobile-space-x {
+    @apply space-x-3 sm:space-x-4 lg:space-x-6;
+  }
+  
+  /* Mobile gap */
+  .mobile-gap {
+    @apply gap-3 sm:gap-4 lg:gap-6;
+  }
+  
+  /* Mobile sidebar behavior */
+  .mobile-sidebar {
+    @apply fixed lg:static inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out;
+  }
+  
+  .mobile-sidebar-open {
+    @apply translate-x-0;
+  }
+  
+  .mobile-sidebar-closed {
+    @apply -translate-x-full lg:translate-x-0;
+  }
+  
+  /* Mobile modal adjustments */
+  .mobile-modal {
+    @apply w-full max-w-md lg:max-w-lg max-h-[90vh] overflow-y-auto;
+  }
+  
+  /* Mobile form improvements */
+  .mobile-form {
+    @apply space-y-4 lg:space-y-6;
+  }
+  
+  .mobile-form-group {
+    @apply space-y-2 lg:space-y-3;
+  }
+  
+  /* Mobile button improvements */
+  .mobile-btn {
+    @apply text-base sm:text-base lg:text-base py-2 lg:py-3;
+  }
+  
+  /* Mobile card improvements */
+  .mobile-card {
+    @apply p-4 lg:p-6 space-y-3 lg:space-y-4;
+  }
+  
+  /* Mobile filter improvements */
+  .mobile-filter {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4;
+  }
+  
+  /* Mobile chore grid */
+  .mobile-chore-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6;
+  }
+  
+  /* Mobile statistics grid */
+  .mobile-stats-grid {
+    @apply grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6;
+  }
+  
+  /* Mobile chart grid */
+  .mobile-chart-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Ensure touch targets are large enough */
+  button, select, input, textarea {
+    min-height: 44px;
+  }
+  
+  /* Improve mobile scrolling */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile-friendly focus states */
+  .input:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) rgb(135 169 107 / 0.5);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  }
+  
+  /* Mobile button improvements */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile form improvements - Fixed font sizes for mobile */
+  .input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile spacing adjustments */
+  .card {
+    padding: 1rem;
+  }
+  
+  /* Mobile header adjustments */
+  header h1 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  header p {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  /* Mobile sidebar adjustments */
+  aside {
+    width: 20rem;
+  }
+  
+  /* Mobile modal adjustments */
+  .modal-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  /* Mobile badge improvements */
+  .badge {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  /* Mobile button text */
+  .btn {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  /* Mobile form labels */
+  label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  /* Mobile form help text */
+  .text-xs.text-charcoal\/50 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  /* Mobile statistics text */
+  .text-2xl.font-bold {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .text-3xl.font-bold {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .mobile-chore-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .mobile-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Desktop improvements */
+@media (min-width: 1025px) {
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .mobile-chore-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .mobile-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  
+  .mobile-chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .card {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  
+  .btn {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here */
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .card {
+    border: 1px solid #d1d5db;
+    box-shadow: none;
+  }
+  
+  .btn {
+    border: 1px solid #d1d5db;
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+  }
+}
