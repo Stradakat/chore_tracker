@@ -11,7 +11,7 @@ import AddChoreModal from './components/AddChoreModal';
 import CompleteChoreModal from './components/CompleteChoreModal';
 import EditChoreModal from './components/EditChoreModal';
 import MemberManagementModal from './components/MemberManagementModal';
-import { Menu, X, AlertTriangle, RefreshCw } from 'lucide-react';
+import { AlertTriangle, RefreshCw } from 'lucide-react';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 

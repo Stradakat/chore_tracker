@@ -42,7 +42,6 @@ export const isOverdue = (chore: Chore): boolean => {
     // For multiple daily chores, check if we've completed enough times today
     const today = new Date();
     const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    const endOfDay = new Date(startOfDay.getTime() + 24 * 60 * 60 * 1000);
     
     // If it's a new day, check if we need to start the first completion
     if (chore.lastCompleted && chore.lastCompleted instanceof Date && !isNaN(chore.lastCompleted.getTime()) && chore.lastCompleted < startOfDay) {

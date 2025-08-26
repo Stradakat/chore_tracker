@@ -115,10 +115,7 @@ const EditChoreModal: React.FC<EditChoreModalProps> = ({
     return member?.name || 'Unassigned';
   };
 
-  const getMemberColor = (id: string) => {
-    const member = householdMembers.find(m => m.id === id);
-    return member?.color || '#6B7280';
-  };
+
 
   return (
     <div className="fixed inset-0 bg-charcoal/50 flex items-center justify-center z-50 p-4">
